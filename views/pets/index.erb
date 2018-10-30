@@ -1,0 +1,16 @@
+<h1>Welcome to Pet App</h1>
+
+<ul>
+	<%@pets.each do |pet|%>
+	
+		<li>
+			<a href="/pets/<%=pet.id%>"><%=pet.name%></a>
+			<a href="/pets/<%=pet.id%>/edit">Edit</a>
+			<form action='/pets/<%=pet.id%>' method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="Delete">
+             </form>
+		</li>
+	<%end%>
+</ul>
+<a href="/pets/new">Create a Pet</a>
